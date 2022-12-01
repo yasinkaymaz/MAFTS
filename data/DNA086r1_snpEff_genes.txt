@@ -1,0 +1,5 @@
+GeneName	GeneId	TranscriptId	BioType	variants_impact_MODIFIER	variants_effect_downstream_gene_variant	variants_effect_intron_variant
+AC058822.1	ENSG00000282278	ENST00000507166	protein_coding	1	0	1
+PDGFRA	ENSG00000134853	ENST00000257290	protein_coding	1	0	1
+PDGFRA	ENSG00000134853	ENST00000507536	retained_intron	1	1	0
+PDGFRA	ENSG00000134853	ENST00000509490	nonsense_mediated_decay	1	1	0

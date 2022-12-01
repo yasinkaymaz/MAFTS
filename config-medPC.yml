@@ -1,0 +1,31 @@
+samples:
+    DNA001r1: fastq_files/DNA001r1
+    DNA001r2: fastq_files/DNA001r2
+    DNA002r1: fastq_files/DNA002r1
+    DNA002r2: fastq_files/DNA002r2
+    DNA003r1: fastq_files/DNA003r1
+    DNA003r2: fastq_files/DNA003r2
+    DNA004r1: fastq_files/DNA004r1
+    DNA004r2: fastq_files/DNA004r2
+    DNA005r1: fastq_files/DNA005r1
+    DNA005r2: fastq_files/DNA005r2
+    DNA006r1: fastq_files/DNA006r1
+    DNA007r1: fastq_files/DNA007r1
+    DNA008r1: fastq_files/DNA008r1
+    DNA009r1: fastq_files/DNA009r1
+    DNA010r1: fastq_files/DNA010r1
+    DNA011r1: fastq_files/DNA011r1
+    DNA012r1: fastq_files/DNA012r1
+    DNA013r1: fastq_files/DNA013r1
+    DNA014r1: fastq_files/DNA014r1
+    DNA015r1: fastq_files/DNA015r1
+    DNA016r1: fastq_files/DNA016r1
+    DNA017r1: fastq_files/DNA017r1
+    DNA018r1: fastq_files/DNA018r1
+    DNA019r1: fastq_files/DNA019r1
+    DNA020r1: fastq_files/DNA020r1
+GenomeIndex: /Users/fantom/Documents/data/Hg38/forGatk/GRCh38_idx
+GenomeFa: /Users/fantom/Documents/data/Hg38/forGatk/hg38_v0_GRCh38.primary_assembly.genome.fa
+TargetRegions: /Users/fantom/Documents/MedGenetics/BioinfoAnalysis/target_regions_chr.bed
+GATKdir: /Users/fantom/Documents/Tools/GATK/gatk-4.2.4.1/
+dbSNPfile: /Users/fantom/Documents/data/Hg38/forGatk/hg38_v0_Homo_sapiens_assembly38.dbsnp138.vcf.gz

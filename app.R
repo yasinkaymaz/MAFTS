@@ -29,7 +29,7 @@ js <- c(
 )
 # Define UI
 ui <- fluidPage(
-  titlePanel("Akciğer Kanseri Gen Paneli Varyant sonuçları"),
+  titlePanel("Variant Analysis Report"),
   br(),
   
   
@@ -55,7 +55,7 @@ ui <- fluidPage(
       )
     ),
   br(),
-  titlePanel("Akciğer Kanseri Tanısı için Yeni Nesil Dizi Analizi Temelli Kit Geliştirilmesi -- TUBITAK TEYDEB 7200066")
+  titlePanel("*supported by TUBITAK TEYDEB 7200066")
 
   )
 

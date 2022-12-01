@@ -1,0 +1,1 @@
+GeneName	GeneId	TranscriptId	BioType

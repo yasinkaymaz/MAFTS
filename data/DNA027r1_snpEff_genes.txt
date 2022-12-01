@@ -1,0 +1,7 @@
+GeneName	GeneId	TranscriptId	BioType	variants_impact_MODIFIER	variants_effect_downstream_gene_variant	variants_effect_intron_variant
+EGFR	ENSG00000146648	ENST00000275493	protein_coding	1	0	1
+EGFR	ENSG00000146648	ENST00000342916	protein_coding	1	1	0
+EGFR	ENSG00000146648	ENST00000344576	protein_coding	1	1	0
+EGFR	ENSG00000146648	ENST00000454757	protein_coding	1	0	1
+EGFR	ENSG00000146648	ENST00000455089	protein_coding	1	0	1
+EGFR	ENSG00000146648	ENST00000638463	protein_coding	1	0	1

@@ -1,0 +1,32 @@
+samples:
+    DNA001r2_0.2: fastq_files/DNA001r2_0.2
+    DNA001r2_0.4: fastq_files/DNA001r2_0.4
+    DNA001r2_0.6: fastq_files/DNA001r2_0.6
+    DNA001r2_0.8: fastq_files/DNA001r2_0.8
+    DNA001r2: fastq_files/DNA001r2
+    DNA002r2_0.2: fastq_files/DNA002r2_0.2
+    DNA002r2_0.4: fastq_files/DNA002r2_0.4
+    DNA002r2_0.6: fastq_files/DNA002r2_0.6
+    DNA002r2_0.8: fastq_files/DNA002r2_0.8
+    DNA002r2: fastq_files/DNA002r2
+    DNA003r2_0.2: fastq_files/DNA003r2_0.2
+    DNA003r2_0.4: fastq_files/DNA003r2_0.4
+    DNA003r2_0.6: fastq_files/DNA003r2_0.6
+    DNA003r2_0.8: fastq_files/DNA003r2_0.8
+    DNA003r2: fastq_files/DNA003r2
+    DNA004r2_0.2: fastq_files/DNA004r2_0.2
+    DNA004r2_0.4: fastq_files/DNA004r2_0.4
+    DNA004r2_0.6: fastq_files/DNA004r2_0.6
+    DNA004r2_0.8: fastq_files/DNA004r2_0.8
+    DNA004r2: fastq_files/DNA004r2
+    DNA005r2_0.2: fastq_files/DNA005r2_0.2
+    DNA005r2_0.4: fastq_files/DNA005r2_0.4
+    DNA005r2_0.6: fastq_files/DNA005r2_0.6
+    DNA005r2_0.8: fastq_files/DNA005r2_0.8
+    DNA005r2: fastq_files/DNA005r2
+GenomeIndex: /Users/yasinkaymaz/Documents/data/Hg38/forGatk/GRCh38_idx
+GenomeFa: /Users/yasinkaymaz/Documents/data/Hg38/forGatk/hg38_v0_GRCh38.primary_assembly.genome.fa
+TargetRegions: /Users/yasinkaymaz/Documents/MedGenetics/BioinfoAnalysis/target_regions_chr.bed
+GATKdir: /Users/yasinkaymaz/Documents/Tools/GATK/gatk-4.2.4.1/
+dbSNPfile: /Users/yasinkaymaz/Documents/data/Hg38/forGatk/hg38_v0_Homo_sapiens_assembly38.dbsnp138.vcf.gz
+tabixDir: ""

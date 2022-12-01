@@ -1,0 +1,56 @@
+samples:
+    DNA001r1: fastq_files/DNA001r1
+    DNA001r2: fastq_files/DNA001r2
+    DNA002r1: fastq_files/DNA002r1
+    DNA002r2: fastq_files/DNA002r2
+    DNA003r1: fastq_files/DNA003r1
+    DNA003r2: fastq_files/DNA003r2
+    DNA004r1: fastq_files/DNA004r1
+    DNA004r2: fastq_files/DNA004r2
+    DNA005r1: fastq_files/DNA005r1
+    DNA005r2: fastq_files/DNA005r2
+    DNA006r1: fastq_files/DNA006r1
+    DNA007r1: fastq_files/DNA007r1
+    DNA008r1: fastq_files/DNA008r1
+    DNA009r1: fastq_files/DNA009r1
+    DNA010r1: fastq_files/DNA010r1
+    DNA011r1: fastq_files/DNA011r1
+    DNA012r1: fastq_files/DNA012r1
+    DNA013r1: fastq_files/DNA013r1
+    DNA014r1: fastq_files/DNA014r1
+    DNA015r1: fastq_files/DNA015r1
+    DNA016r1: fastq_files/DNA016r1
+    DNA017r1: fastq_files/DNA017r1
+    DNA018r1: fastq_files/DNA018r1
+    DNA019r1: fastq_files/DNA019r1
+    DNA020r1: fastq_files/DNA020r1
+    DNA022r1: fastq_files/DNA022r1
+    DNA027r1: fastq_files/DNA027r1
+    DNA029r1: fastq_files/DNA029r1
+    DNA030r1: fastq_files/DNA030r1
+    DNA035r1: fastq_files/DNA035r1
+    DNA036r1: fastq_files/DNA036r1
+    DNA038r1: fastq_files/DNA038r1
+    DNA052r1: fastq_files/DNA052r1
+    DNA053r1: fastq_files/DNA053r1
+    DNA054r1: fastq_files/DNA054r1
+    DNA055r1: fastq_files/DNA055r1
+    DNA056r1: fastq_files/DNA056r1
+    DNA059r1: fastq_files/DNA059r1
+    DNA062r1: fastq_files/DNA062r1
+    DNA063r1: fastq_files/DNA063r1
+    DNA064r1: fastq_files/DNA064r1
+    DNA066r1: fastq_files/DNA066r1
+    DNA074r1: fastq_files/DNA074r1
+    DNA076r1: fastq_files/DNA076r1
+    DNA077r1: fastq_files/DNA077r1
+    DNA078r1: fastq_files/DNA078r1
+    DNA086r1: fastq_files/DNA086r1
+    DNA089r1: fastq_files/DNA089r1
+    DNA092r1: fastq_files/DNA092r1
+GenomeIndex: /Users/yasinkaymaz/Documents/data/Hg38/forGatk/GRCh38_idx
+GenomeFa: /Users/yasinkaymaz/Documents/data/Hg38/forGatk/hg38_v0_GRCh38.primary_assembly.genome.fa
+TargetRegions: /Users/yasinkaymaz/Documents/MedGenetics/BioinfoAnalysis/target_regions_chr.bed
+GATKdir: /Users/yasinkaymaz/Documents/Tools/GATK/gatk-4.2.4.1/
+dbSNPfile: /Users/yasinkaymaz/Documents/data/Hg38/forGatk/hg38_v0_Homo_sapiens_assembly38.dbsnp138.vcf.gz
+tabixDir: ""

@@ -4,10 +4,11 @@ dockerTag = "latest" #FIXME tagged versions
 rule all:
     input:
         expand("FastQC/{sample}_R{num}_fastqc.zip", sample=config["samples"], num=['1', '2']),
-        "utdir/fastq_multiqc.html",
-        expand("gatk/{sample}_SnpEff.vcf.gz", sample=config["samples"])
+        #"utdir/fastq_multiqc.html",
+        expand("gatk/{sample}_SnpEff.vcf.gz", sample=config["samples"]),
+        expand("gatk/{sample}_snpEff_summary.html", sample=config["samples"])
 
-rule fastqc:
+rule FastQC:
     input:
         fq=lambda wildcards: f"{config['samples'][wildcards.sample]}_R{wildcards.num}.fastq.gz"
     output:
@@ -18,7 +19,7 @@ rule fastqc:
         "{input.fq} "
         "--outdir FastQC"
 
-rule multiqc_fastq:
+rule MultiFastQC:
     input:
         expand("FastQC/{sample}_R{num}_fastqc.html", sample=config["samples"], num=['1', '2'])
     output:
@@ -26,7 +27,7 @@ rule multiqc_fastq:
     shell:
         "multiqc FastQC/ -outdir utdir --filename fastq_multiqc.html"
 
-rule fastp_pe:
+rule AdpTrimFastp:
     input:
         sample=["fastq_files/{sample}_R1.fastq.gz", "fastq_files/{sample}_R2.fastq.gz"]
     output:
@@ -46,7 +47,7 @@ rule fastp_pe:
     wrapper:
         "v0.86.0/bio/fastp"
 
-rule bowtie2:
+rule Bowtie2:
     input:
         sample=["trimmed/{sample}_R1.fastq", "trimmed/{sample}_R2.fastq"]
     output:
@@ -60,7 +61,7 @@ rule bowtie2:
     wrapper:
         "v0.86.0/bio/bowtie2/align"
 
-rule samtools_sort:
+rule Samtools_sort:
     input:
         "mapped/{sample}.bam"
     output:
@@ -82,7 +83,7 @@ rule chrFilter:
         "samtools index {input.ibam} && "
         "samtools view -o {output.file} {input.ibam} `seq 1 22 | sed 's/^/chr/'` "
 
-rule samtools_coverage:
+rule Samtools_coverage:
     input:
         bam="mapped/{sample}.chr1_22.bam",
         bed=config["TargetRegions"]
@@ -93,7 +94,7 @@ rule samtools_coverage:
     shell:
         "bedtools coverage -a {input.bed} -b {input.bam} > {output.cov} "
 
-rule BamReadGroups:
+rule BamAddReadGroups:
     input:
         bam="mapped/{sample}.chr1_22.bam"
     output:
@@ -114,7 +115,7 @@ rule BamReadGroups:
         "-SM {params.readgroup} "
         "-PL 'ILLUMINA' "
 
-rule mutect2_tumor_only:
+rule Mutect2_tumor_only:
     input:
         bam="mapped/{sample}.RG.bam",
         genome=config["GenomeFa"]
@@ -129,25 +130,25 @@ rule mutect2_tumor_only:
         "-R {input.genome} "
         "-O {output} "
 
-
-rule filterCalls:
+rule FilterCalls:
     input:
         genome=config["GenomeFa"],
         vcf="gatk/{sample}.vcf.gz"
     output:
         temp("gatk/{sample}_filtered.vcf.gz")
     params:
-        gatkDir=config["GATKdir"]
+        gatkDir=config["GATKdir"],
+        tabDir=config["tabixDir"]
     shell:
         "{params.gatkDir}/gatk VariantFiltration "
         "-V {input.vcf} "
         "-R {input.genome} "
         "--filter-expression  'DP <= 20' --filter-name 'DepthofQuality' "
         "-O {output}.tmp && "
-        "bcftools view -f PASS {output}.tmp |bgzip > {output} && "
+        "bcftools view -f PASS {output}.tmp |{params.tabDir}bgzip > {output} && "
         "bcftools index --tbi {output} "
 
-rule filterMutectVars:
+rule FilterMutectCalls:
     input:
         genome=config["GenomeFa"],
         vcf="gatk/{sample}_filtered.vcf.gz"
@@ -155,7 +156,8 @@ rule filterMutectVars:
         temp("gatk/{sample}_MutFiltered.vcf.gz")
     params:
         statfile="gatk/{sample}.vcf.gz.stats",
-        gatkDir=config["GATKdir"]
+        gatkDir=config["GATKdir"],
+        tabDir=config["tabixDir"]
     shell:
         "{params.gatkDir}/gatk FilterMutectCalls "
         "-V {input.vcf} "
@@ -164,10 +166,10 @@ rule filterMutectVars:
         "--min-allele-fraction 0.1 "
         "--unique-alt-read-count 5 "
         "-O {output}.tmp && "
-        "bcftools view -f PASS {output}.tmp |bgzip > {output} && "
+        "bcftools view -f PASS {output}.tmp |{params.tabDir}bgzip > {output} && "
         "bcftools index --tbi {output} "
 
-rule VarAnnot:
+rule AnnotateSNPs:
     input:
         vcf="gatk/{sample}_MutFiltered.vcf.gz",
         bam="mapped/{sample}.RG.bam"
@@ -182,10 +184,16 @@ rule VarAnnot:
         "--dbsnp {params.dbsnpFile} "
         "-O {output} "
 
-rule runSnpEff:
+rule SnpEff:
     input:
         vcf="gatk/{sample}_SNPFiltered.vcf.gz"
     output:
-        "gatk/{sample}_SnpEff.vcf.gz"
+        vcEff="gatk/{sample}_SnpEff.vcf.gz",
+        genesTxt="gatk/{sample}_snpEff_genes.txt",
+        summary="gatk/{sample}_snpEff_summary.html"
+    params:
+        tabDir=config["tabixDir"]
     shell:
-        "snpEff GRCh38.99 {input.vcf}|bgzip > {output} "
+        "snpEff GRCh38.99 {input.vcf}|{params.tabDir}bgzip > {output.vcEff} && "
+        "mv snpEff_genes.txt {output.genesTxt} && "
+        "mv snpEff_summary.html {output.summary} "

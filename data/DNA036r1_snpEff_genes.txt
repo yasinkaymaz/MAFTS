@@ -1,0 +1,11 @@
+GeneName	GeneId	TranscriptId	BioType	variants_impact_LOW	variants_impact_MODERATE	variants_impact_MODIFIER	variants_effect_intron_variant	variants_effect_missense_variant	variants_effect_synonymous_variant
+AL132671.2	ENSG00000282218	ENST00000467125	protein_coding	0	0	1	1	0	0
+EGFR	ENSG00000146648	ENST00000275493	protein_coding	1	0	0	0	0	1
+EGFR	ENSG00000146648	ENST00000342916	protein_coding	1	0	0	0	0	1
+EGFR	ENSG00000146648	ENST00000344576	protein_coding	1	0	0	0	0	1
+EGFR	ENSG00000146648	ENST00000420316	protein_coding	1	0	0	0	0	1
+EGFR	ENSG00000146648	ENST00000450046	protein_coding	1	0	0	0	0	1
+EGFR	ENSG00000146648	ENST00000454757	protein_coding	1	0	0	0	0	1
+EGFR	ENSG00000146648	ENST00000455089	protein_coding	1	0	0	0	0	1
+ROS1	ENSG00000047936	ENST00000368507	protein_coding	0	1	0	0	1	0
+ROS1	ENSG00000047936	ENST00000368508	protein_coding	0	1	0	0	1	0

@@ -1,0 +1,6 @@
+GeneName	GeneId	TranscriptId	BioType	variants_impact_LOW	variants_impact_MODIFIER	variants_effect_downstream_gene_variant	variants_effect_intron_variant	variants_effect_synonymous_variant
+MET	ENSG00000105976	ENST00000318493	protein_coding	0	1	0	1	0
+MET	ENSG00000105976	ENST00000397752	protein_coding	0	1	0	1	0
+PIK3CA	ENSG00000121879	ENST00000263967	protein_coding	1	1	0	1	1
+PIK3CA	ENSG00000121879	ENST00000462255	retained_intron	0	2	2	0	0
+PIK3CA	ENSG00000121879	ENST00000643187	protein_coding	1	1	0	1	1
